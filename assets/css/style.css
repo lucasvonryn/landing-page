@@ -161,3 +161,10 @@ a {
     justify-content: center;
     text-align: center;
 }
+
+.grid-one-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
