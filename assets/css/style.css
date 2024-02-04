@@ -432,4 +432,19 @@ body .full-width {
     .gallery .grid {
         grid-template-columns: 1fr;
     }
+
+    .form-group input,
+    .form-group textarea {
+        border: none;
+        background-color: var(--white-color);
+        padding: 1.5rem 2rem;
+        max-width: 50%;
+        height: 50%;
+        border-radius: 1rem;
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }   
 }
