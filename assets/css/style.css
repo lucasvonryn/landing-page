@@ -63,6 +63,36 @@ a {
     text-decoration: none;
 }
 
+.responsive-table {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 36rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 1rem;
+    white-space: nowrap;
+    border: 0.1rem solid var(--light-gray-color);
+}
+
+thead th,
+tfoot td {
+    background-color: var(--light-gray-color);
+}
+
 .main-bg {
     background-image: url(../img/main-bg.svg);
     background-size: cover;
@@ -78,7 +108,7 @@ a {
 .main-content {
     max-width: 120rem;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 8rem;
 }
 
 .section {
@@ -91,8 +121,8 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 0.1rem solid var(--light-gray-color);
     z-index: 1;
+    border-bottom: 0.1rem solid var(--light-gray-color);
 }
 
 .menu-content {
@@ -135,11 +165,11 @@ a {
 
 .intro-content {
     position: relative;
-    top: -6.6rem;
+    /* top: -6.6rem; */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .intro-text-content, .intro-img {
@@ -155,16 +185,119 @@ a {
 
 .top3-content {
     max-width: 64rem;
-    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: center;
+    min-height: 100vh;
     text-align: center;
 }
 
 .grid-one-content {
-    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: center;
+    min-height: 100vh;
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    margin-bottom: 6rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    padding-left: 8rem;
+    margin-bottom: 1rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4.5rem;
+    left: 0;
+    transform: rotate(5deg);
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-group {
+    flex: 1 1 32rem;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    border: none;
+    background-color: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-size: 3rem;
+}
+
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    border-radius: 5rem;
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--gray-color);
+}
+
+.form-group ::placeholder {
+    color: var(#f3f3f3);
 }
